@@ -13,12 +13,8 @@ pipeline {
             steps {
                 withMaven(
                     // Specify the Maven installation configuration
-                    maven: 'Maven',
-                    // Optionally, you can specify additional Maven options
-                    mavenOpts: '-Xmx1024m',
-                    // Optionally, you can configure the Maven settings file
-                    mavenSettingsConfig: 'my-maven-settings'
-                ) 
+                    maven: 'Maven'
+                )
                 // Exécuter le build Maven
                 bat 'mvn clean package'
             }
