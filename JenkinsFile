@@ -5,7 +5,7 @@ pipeline {
         stage('Clonage du dépôt') {
             steps {
                 // Cloner le dépôt Git
-                git branch: 'master', url: 'https://github.com/amouzougit/jenkins_demo.git'
+                git branch: 'master', url: 'https://github.com/amouzougit/job_jenkins.git'
             }
         }
 
