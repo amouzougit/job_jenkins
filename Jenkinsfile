@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+        tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "Maven"
+    }
     stages {
         stage('Clonage du dépôt') {
             steps {
@@ -10,11 +13,9 @@ pipeline {
         }
 
         stage('Build') {
+
             steps {
-                withMaven(
-                    // Specify the Maven installation configuration
-                    maven: 'Maven'
-                )
+                
                 // Exécuter le build Maven
                 bat 'mvn clean package'
             }
