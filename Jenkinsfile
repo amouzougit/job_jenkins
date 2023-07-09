@@ -1,6 +1,6 @@
 pipeline {
     agent any
-        tools {
+    tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "Maven"
     }
@@ -13,11 +13,9 @@ pipeline {
         }
 
         stage('Build') {
-
             steps {
-                
-                // Exécuter le build Maven
-                bat 'mvn clean package'
+                // Exécuter le build Maven with the release flag
+                bat 'mvn clean package -Dmaven.compiler.release=14'
             }
         }
 
