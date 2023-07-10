@@ -15,7 +15,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Exécuter le build Maven with the release flag
-                bat 'mvn clean package -Dmaven.compiler.release=14'
+                bat 'mvn clean package'
+                // -Dmaven.compiler.release=14
             }
         }
 
